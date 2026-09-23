@@ -5,6 +5,8 @@ import { PlaceholderGraphic } from "@/components/ui/placeholder-graphic";
 import { Reveal } from "@/components/motion/reveal";
 import { Parallax } from "@/components/motion/parallax";
 import { Counter } from "@/components/motion/counter";
+import { Magnetic } from "@/components/motion/magnetic";
+import { Tilt } from "@/components/motion/tilt";
 
 const STATS = [
   { icon: Award, value: 200, label: "Certified Specialists" },
@@ -46,22 +48,28 @@ function LifeAtRns() {
           </div>
 
           <div className="mt-8 flex flex-wrap gap-4">
-            <Button size="lg" className="rounded-full px-6">
-              Meet the People Behind RNS
-            </Button>
-            <Button size="lg" variant="glass" className="rounded-full px-6">
-              See Open Roles
-            </Button>
+            <Magnetic>
+              <Button size="lg" className="rounded-full px-6">
+                Meet the People Behind RNS
+              </Button>
+            </Magnetic>
+            <Magnetic>
+              <Button size="lg" variant="glass" className="rounded-full px-6">
+                See Open Roles
+              </Button>
+            </Magnetic>
           </div>
         </Reveal>
 
         <Parallax speed={20}>
-          <PlaceholderGraphic
-            icon={Users}
-            tone="neutral"
-            label="SOC floor"
-            className="aspect-[4/3] w-full"
-          />
+          <Tilt>
+            <PlaceholderGraphic
+              icon={Users}
+              tone="neutral"
+              label="SOC floor"
+              className="aspect-[4/3] w-full"
+            />
+          </Tilt>
         </Parallax>
       </div>
     </section>

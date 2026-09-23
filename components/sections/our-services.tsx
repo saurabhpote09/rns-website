@@ -6,6 +6,8 @@ import { SectionTag } from "@/components/ui/section-tag";
 import { Button } from "@/components/ui/button";
 import { PlaceholderGraphic } from "@/components/ui/placeholder-graphic";
 import { Reveal } from "@/components/motion/reveal";
+import { Magnetic } from "@/components/motion/magnetic";
+import { Tilt } from "@/components/motion/tilt";
 import { PathProgressDot } from "@/components/motion/path-progress-dot";
 import { useScrollSyncIndex } from "@/hooks/use-scroll-sync-index";
 import { cn } from "cn";
@@ -134,11 +136,13 @@ function OurServices() {
                       {service.body}
                     </p>
                   </div>
-                  <PlaceholderGraphic
-                    icon={service.icon}
-                    tone="red"
-                    className="hidden size-16 shrink-0 sm:flex"
-                  />
+                  <Tilt className="hidden sm:block">
+                    <PlaceholderGraphic
+                      icon={service.icon}
+                      tone="red"
+                      className="size-16 shrink-0"
+                    />
+                  </Tilt>
                 </div>
               </div>
             ))}
@@ -146,12 +150,16 @@ function OurServices() {
         </div>
 
         <div className="mt-12 flex flex-wrap items-center gap-4">
-          <Button size="lg" className="rounded-full px-6">
-            Explore All Five Domains
-          </Button>
-          <Button size="lg" variant="secondary" className="rounded-full px-6">
-            Request an Architecture Review
-          </Button>
+          <Magnetic>
+            <Button size="lg" className="rounded-full px-6">
+              Explore All Five Domains
+            </Button>
+          </Magnetic>
+          <Magnetic>
+            <Button size="lg" variant="secondary" className="rounded-full px-6">
+              Request an Architecture Review
+            </Button>
+          </Magnetic>
         </div>
 
         <p className="mt-8 text-sm font-semibold text-foreground">

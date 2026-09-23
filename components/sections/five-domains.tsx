@@ -13,6 +13,8 @@ import { SectionTag } from "@/components/ui/section-tag";
 import { Button } from "@/components/ui/button";
 import { PlaceholderGraphic } from "@/components/ui/placeholder-graphic";
 import { Reveal } from "@/components/motion/reveal";
+import { Magnetic } from "@/components/motion/magnetic";
+import { Tilt } from "@/components/motion/tilt";
 import { PathProgressDot } from "@/components/motion/path-progress-dot";
 import { useScrollSyncIndex } from "@/hooks/use-scroll-sync-index";
 import { cn } from "cn";
@@ -151,11 +153,13 @@ function FiveDomains() {
                       {domain.body}
                     </p>
                   </div>
-                  <PlaceholderGraphic
-                    icon={domain.icon}
-                    tone="green"
-                    className="hidden size-16 shrink-0 sm:flex"
-                  />
+                  <Tilt className="hidden sm:block">
+                    <PlaceholderGraphic
+                      icon={domain.icon}
+                      tone="green"
+                      className="size-16 shrink-0"
+                    />
+                  </Tilt>
                 </div>
                 <p className="mt-6 flex items-center gap-1 text-sm font-medium text-accent-green">
                   {domain.tag}
@@ -167,16 +171,20 @@ function FiveDomains() {
         </div>
 
         <div className="mt-12 flex flex-wrap gap-4">
-          <Button size="lg" className="rounded-full px-6">
-            Explore All Five Domains
-          </Button>
-          <Button
-            size="lg"
-            variant="glass"
-            className="rounded-full px-6"
-          >
-            Request an Architecture Review
-          </Button>
+          <Magnetic>
+            <Button size="lg" className="rounded-full px-6">
+              Explore All Five Domains
+            </Button>
+          </Magnetic>
+          <Magnetic>
+            <Button
+              size="lg"
+              variant="glass"
+              className="rounded-full px-6"
+            >
+              Request an Architecture Review
+            </Button>
+          </Magnetic>
         </div>
       </div>
     </section>

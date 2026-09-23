@@ -5,6 +5,7 @@ import { Bug, ShieldAlert } from "lucide-react";
 import { SectionTag } from "@/components/ui/section-tag";
 import { PlaceholderGraphic } from "@/components/ui/placeholder-graphic";
 import { Counter } from "@/components/motion/counter";
+import { Tilt } from "@/components/motion/tilt";
 import { SplitHeadline } from "@/components/motion/split-headline";
 import { gsap, ScrollTrigger, useGSAP } from "@/lib/gsap";
 
@@ -102,11 +103,13 @@ function MarketReality() {
 
         <div className="mt-14 grid gap-6 lg:grid-cols-2">
           <div className="rounded-2xl border border-brand/30 p-8">
-            <PlaceholderGraphic
-              icon={Bug}
-              tone="red"
-              className="mb-8 aspect-[16/9] w-full"
-            />
+            <Tilt>
+              <PlaceholderGraphic
+                icon={Bug}
+                tone="red"
+                className="mb-8 aspect-[16/9] w-full"
+              />
+            </Tilt>
             <p className="text-sm font-semibold tracking-wider text-brand uppercase">
               What Changed
             </p>
@@ -151,11 +154,13 @@ function MarketReality() {
           </div>
 
           <div className="rounded-2xl border border-accent-green/30 p-8">
-            <PlaceholderGraphic
-              icon={ShieldAlert}
-              tone="green"
-              className="mb-8 aspect-[16/9] w-full"
-            />
+            <Tilt>
+              <PlaceholderGraphic
+                icon={ShieldAlert}
+                tone="green"
+                className="mb-8 aspect-[16/9] w-full"
+              />
+            </Tilt>
             <p className="text-sm font-semibold tracking-wider text-accent-green uppercase">
               What It Costs
             </p>

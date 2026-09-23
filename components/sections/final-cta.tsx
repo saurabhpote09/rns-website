@@ -4,7 +4,8 @@ import { Button } from "@/components/ui/button";
 import { PlaceholderGraphic } from "@/components/ui/placeholder-graphic";
 import { Parallax } from "@/components/motion/parallax";
 import { Magnetic } from "@/components/motion/magnetic";
-import { ParticleNetwork } from "@/components/motion/particle-network";
+import { Tilt } from "@/components/motion/tilt";
+import { CtaScene } from "@/components/three/cta-scene";
 import { SplitHeadline } from "@/components/motion/split-headline";
 
 function FinalCta() {
@@ -14,16 +15,18 @@ function FinalCta() {
         <div className="h-full w-full bg-gradient-to-tr from-brand/20 via-transparent to-transparent" />
       </Parallax>
       <div className="absolute inset-0">
-        <ParticleNetwork className="absolute inset-0 h-full w-full" density={0.00004} />
+        <CtaScene className="absolute inset-0 h-full w-full" />
       </div>
       <div className="relative mx-auto grid max-w-[1440px] gap-12 px-6 lg:grid-cols-2 lg:items-center lg:px-12">
         <Parallax speed={16}>
-          <PlaceholderGraphic
-            icon={ShieldHalf}
-            tone="red"
-            label="RNS mark"
-            className="aspect-square w-full max-w-md"
-          />
+          <Tilt>
+            <PlaceholderGraphic
+              icon={ShieldHalf}
+              tone="red"
+              label="RNS mark"
+              className="aspect-square w-full max-w-md"
+            />
+          </Tilt>
         </Parallax>
 
         <div>

@@ -5,7 +5,8 @@ import { StaggerGroup, StaggerItem } from "@/components/motion/stagger";
 import { Reveal } from "@/components/motion/reveal";
 import { Parallax } from "@/components/motion/parallax";
 import { Magnetic } from "@/components/motion/magnetic";
-import { ParticleNetwork } from "@/components/motion/particle-network";
+import { Tilt } from "@/components/motion/tilt";
+import { HeroScene } from "@/components/three/hero-scene";
 import {
   Carousel,
   CarouselContent,
@@ -27,7 +28,7 @@ function Hero() {
         <div className="h-full w-full bg-[radial-gradient(circle_at_30%_35%,color-mix(in_srgb,var(--brand)_25%,transparent),transparent_60%)]" />
       </Parallax>
       <div className="absolute inset-0">
-        <ParticleNetwork className="absolute inset-0 h-full w-full" />
+        <HeroScene className="absolute inset-0 h-full w-full" />
       </div>
       <Carousel opts={{ loop: true }} className="relative mx-auto max-w-[1440px]">
         <CarouselContent>
@@ -63,14 +64,16 @@ function Hero() {
                       Book a Security Consultation
                     </Button>
                   </Magnetic>
-                  <Button
-                    size="lg"
-                    variant="glass"
-                    className="rounded-full px-6"
-                  >
-                    <ArrowRight className="size-4 transition-transform duration-300 group-hover/button:translate-x-1" />
-                    Explore Our Solutions
-                  </Button>
+                  <Magnetic>
+                    <Button
+                      size="lg"
+                      variant="glass"
+                      className="rounded-full px-6"
+                    >
+                      <ArrowRight className="size-4 transition-transform duration-300 group-hover/button:translate-x-1" />
+                      Explore Our Solutions
+                    </Button>
+                  </Magnetic>
                 </StaggerItem>
 
                 <StaggerItem className="mt-16 flex items-center gap-3">
@@ -81,12 +84,14 @@ function Hero() {
 
               <Parallax speed={24}>
                 <Reveal onMount delay={0.3} y={0} scale={0.97}>
-                  <PlaceholderGraphic
-                    icon={ShieldCheck}
-                    tone="red"
-                    label="Hero illustration"
-                    className="aspect-square w-full lg:aspect-[4/3]"
-                  />
+                  <Tilt>
+                    <PlaceholderGraphic
+                      icon={ShieldCheck}
+                      tone="red"
+                      label="Hero illustration"
+                      className="aspect-square w-full lg:aspect-[4/3]"
+                    />
+                  </Tilt>
                 </Reveal>
               </Parallax>
             </div>
